@@ -1,0 +1,58 @@
+openapi: 3.0.1
+info:
+  title: Online Order API
+  version: 1.0.0
+  description: A basic API for working with the Swagger tools.
+paths:
+  /orders:
+    summary: Get all the orders data.
+    description: >-
+      This path is used to retrieve all of the orders data from the orders.json
+      file.
+    get:
+      summary: Gets the order data.
+      description: Retrieve the order information from the orders.json file.
+      operationId: get_orders
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Orders
+  /neworder:
+    summary: This path is used to add a new order to the orders.json file.
+    description: Creates a new element on the order object.
+    post:
+      summary: Creates a new customer order in our app.
+      description: Adds a new order element to the orders.json file.
+      operationId: new_order
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - New Order
+  /update/{id}:
+    summary: >-
+      This path is used to change the status of an order matching the provided
+      id.
+    description: It modifies the state attribute of each order.
+    put:
+      summary: Updates the state of an order in our app.
+      description: Update the state of an order with a matching id in the orders.json.
+      operationId: update_id
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Update Id
+  /delete/{id}:
+    summary: This path is used to delete an order with a matching id.
+    description: Deletes an object.
+    delete:
+      summary: Deletes an order from our app.
+      description: Deletes an order with a matching id from the orders.json file.
+      operationId: delete_id
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Delete Id
